@@ -23,7 +23,7 @@ while (true) {
   const randomIndex = Math.floor(Math.random() * availableMoves.length);
   const computerMove = availableMoves[randomIndex];
   const hmack = new Hmack(computerMove);
-  console.log('\nhmack computer: ', hmack.createHmack(key));
+  console.log('\nHMACK: ', hmack.createHmack(key));
   console.log('Available moves:');
   console.log('0 - Exit');
   for (let i = 0; i < availableMoves.length; i++) {
@@ -49,8 +49,12 @@ while (true) {
       if (winner === computerMove) console.log('You lose!');
       else if (winner === userMove) console.log('You win!');
       else console.log('Draw!');
-      const hmackUser = new Hmack(userMove);
-      console.log('hmack user: ', hmackUser.createHmack(key));
+
+      const buffer = Buffer.from(key, 'hex');
+      const str = buffer.toString('utf8');
+
+      console.log('HMACK key: ', key.toString('hex'));
+
       break;
   }
 
