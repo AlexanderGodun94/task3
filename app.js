@@ -49,10 +49,6 @@ while (true) {
       if (winner === computerMove) console.log('You lose!');
       else if (winner === userMove) console.log('You win!');
       else console.log('Draw!');
-
-      const buffer = Buffer.from(key, 'hex');
-      const str = buffer.toString('utf8');
-
       console.log('HMACK key: ', key.toString('hex'));
 
       break;
